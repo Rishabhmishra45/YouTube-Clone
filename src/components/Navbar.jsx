@@ -12,7 +12,7 @@ import user from '../assets/user.jpg'
 
 function Navbar() {
     return (
-        <div className='flex justify-between px-7 py-2'>
+        <div className='flex justify-between fixed top-0 w-[100%] bg-white px-7 py-2'>
             <div className='flex items-center space-x-4'>
                 <GiHamburgerMenu className='text-xl cursor-pointer' />
                 <img src={logo} alt="logo" className='w-28 cursor-pointer' />
