@@ -1,31 +1,22 @@
 import React from "react";
 import { GoHome } from "react-icons/go";
-import { SiYoutubeshorts } from "react-icons/si";
-import { MdOutlineSubscriptions, MdHistory, MdWatchLater } from "react-icons/md";
-import { PiUserSquareThin } from "react-icons/pi";
-import { IoGameControllerOutline } from "react-icons/io5";
+import { SiYoutubeshorts, SiYoutubegaming, SiYoutubemusic, SiYoutubekids, SiYoutubestudio } from "react-icons/si";
+import { MdOutlineSubscriptions, MdHistory, MdWatchLater, MdOutlineWatchLater, MdPodcasts } from "react-icons/md";
+import { PiUserSquareThin, PiFilmSlateLight, PiLightbulbLight } from "react-icons/pi";
+import { IoGameControllerOutline, IoMusicalNotesOutline } from "react-icons/io5";
 import { AiOutlineLike } from "react-icons/ai";
-import { FaChevronRight } from "react-icons/fa6";
+import { FaChevronRight, FaYoutube, FaRegNewspaper } from "react-icons/fa";
 import { RiShoppingBag4Line } from "react-icons/ri";
-import { IoMusicalNotesOutline } from "react-icons/io5";
-import { SiYoutubegaming } from "react-icons/si";
-import { ImNewspaper } from "react-icons/im";
-import { FaYoutube } from "react-icons/fa";
-import { SiYoutubestudio } from "react-icons/si";
-import { SiYoutubekids } from "react-icons/si";
-import { MdOutlineWatchLater } from "react-icons/md";
-import { SiYoutubemusic } from "react-icons/si";
-import { SiTrendmicro } from "react-icons/si";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
-import { PiFilmSlateLight } from "react-icons/pi";
-import { CgMediaLive } from "react-icons/cg";
-import { FaRegNewspaper } from "react-icons/fa";
-import { TfiCup } from "react-icons/tfi";
-import { PiLightbulbLight } from "react-icons/pi";
-import { SiStylelint } from "react-icons/si";
-import { MdPodcasts } from "react-icons/md";
 import { BiVideo } from "react-icons/bi";
+import { ImNewspaper } from "react-icons/im";
+import { TfiCup } from "react-icons/tfi";
+import { CgMediaLive } from "react-icons/cg";
+import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { GiLinkedRings } from "react-icons/gi";
+import { IoSettingsOutline } from "react-icons/io5";
+import { MdOutlineOutlinedFlag } from "react-icons/md";
+import { FaRegQuestionCircle } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 
 function Sidebar() {
     const sidebarItems = [
@@ -49,12 +40,12 @@ function Sidebar() {
         {
             id: 1,
             name: "Your Channel",
-            icon: <PiUserSquareThin />
+            icon: <CgProfile />
         },
         {
             id: 2,
             name: "History",
-            icon: <IoGameControllerOutline />
+            icon: <MdHistory />
         },
         {
             id: 3,
@@ -69,7 +60,7 @@ function Sidebar() {
         {
             id: 5,
             name: "Watch Later",
-            icon: <MdWatchLater />
+            icon: <MdOutlineWatchLater />
         },
         {
             id: 6,
@@ -96,7 +87,7 @@ function Sidebar() {
         {
             id: 4,
             name: "Live",
-            icon: <BiVideo />
+            icon: <CgMediaLive />
         },
         {
             id: 5,
@@ -109,27 +100,70 @@ function Sidebar() {
             icon: <ImNewspaper />
         },
         {
-            id: 6,
+            id: 7,
             name: "Sports",
-            icon: <AiOutlineLike />
+            icon: <TfiCup />
         },
         {
-            id: 6,
+            id: 8,
             name: "Courses",
-            icon: <AiOutlineLike />
+            icon: <PiLightbulbLight />
         },
         {
-            id: 6,
+            id: 9,
             name: "Fashion & Beauty",
-            icon: <AiOutlineLike />
+            icon: <HiOutlineShoppingBag />
         },
         {
-            id: 6,
+            id: 10,
             name: "Podcasts",
-            icon: <AiOutlineLike />
+            icon: <MdPodcasts />
         },
     ]
-
+    const morefromyoutube = [
+        {
+            id: 1,
+            name: "YouTube Premium",
+            icon: <FaYoutube />
+        },
+        {
+            id: 2,
+            name: "YouTube Music",
+            icon: <SiYoutubemusic />
+        },
+        {
+            id: 3,
+            name: "YouTube Kids",
+            icon: <SiYoutubekids />
+        },
+        {
+            id: 4,
+            name: "YouTube TV",
+            icon: <GiLinkedRings />
+        },
+    ]
+    const sidebarItems5 = [
+        {
+            id: 1,
+            name: "Settings",
+            icon: <IoSettingsOutline />
+        },
+        {
+            id: 2,
+            name: "Report History",
+            icon: <MdOutlineOutlinedFlag />
+        },
+        {
+            id: 3,
+            name: "Help",
+            icon: <FaRegQuestionCircle />
+        },
+        {
+            id: 4,
+            name: "Send Feedback",
+            icon: <SiYoutubestudio />
+        },
+    ]
     return (
         <div className='px-6 w-[15%] h-[calc(100vh-6.625rem)] overflow-y-scroll overflow-x-hidden mt-16'>
             {/* Home */}
@@ -137,7 +171,7 @@ function Sidebar() {
                 {
                     sidebarItems.map((item) => {
                         return (
-                            <div className='flex items-center space-x-6 cursor-pointer hover:bg-gray-300 duration-300 rounded-xl p-1'>
+                            <div className='flex items-center space-x-6 cursor-pointer hover:bg-gray-300 duration-300 rounded-xl p-1' key={item.id}>
                                 <div className="text-xl cursor-pointer">{item.icon}</div>
                                 <span>{item.name}</span>
                             </div>
@@ -155,7 +189,7 @@ function Sidebar() {
                 {
                     sidebarItems2.map((item) => {
                         return (
-                            <div className='flex items-center space-x-6 cursor-pointer hover:bg-gray-300 duration-300 rounded-xl p-1'>
+                            <div className='flex items-center space-x-6 cursor-pointer hover:bg-gray-300 duration-300 rounded-xl p-1' key={item.id}>
                                 <div className="text-xl cursor-pointer">{item.icon}</div>
                                 <span>{item.name}</span>
                             </div>
@@ -173,15 +207,50 @@ function Sidebar() {
                 {
                     explore.map((item) => {
                         return (
-                            <div className='flex items-center space-x-6 cursor-pointer hover:bg-gray-300 duration-300 rounded-xl p-1'>
+                            <div className='flex items-center space-x-6 cursor-pointer hover:bg-gray-300 duration-300 rounded-xl p-1' key={item.id}>
                                 <div className="text-xl cursor-pointer">{item.icon}</div>
                                 <span>{item.name}</span>
                             </div>
                         );
                     })}
             </div>
+            <br />
+            <hr />
+            {/* More from YouTube */}
+            <div className='mt-4 space-y-3 items-center'>
+                <div className="flex items-center space-x-2">
+                    <h1 className="font-semibold whitespace-nowrap">More From YouTube</h1>
+                    <FaChevronRight className="cursor-pointer" />
+                </div>
+                {
+                    morefromyoutube.map((item) => {
+                        return (
+                            <div className='flex items-center space-x-6 cursor-pointer hover:bg-gray-300 duration-300 rounded-xl p-1' key={item.id}>
+                                <div className="text-xl cursor-pointer">{item.icon}</div>
+                                <span>{item.name}</span>
+                            </div>
+                        );
+                    })}
+            </div>
+            <br />
+            <hr />
+            {/* Settings */}
+            <div className='mt-4 space-y-3 items-center'>
+                {
+                    sidebarItems5.map((item) => {
+                        return (
+                            <div className='flex items-center space-x-6 cursor-pointer hover:bg-gray-300 duration-300 rounded-xl p-1' key={item.id}>
+                                <div className="text-xl cursor-pointer">{item.icon}</div>
+                                <span>{item.name}</span>
+                            </div>
+                        );
+                    })}
+            </div>
+            <br />
+            <hr />
+            <p className="text-sm text-gray-500 mt-4">About Press Copyright Contact us Creators Advertise Developers <br /> <br /> Terms Privacy Policy & Safety <br /> How YouTube works Test new features <br /> <br /> © 2024 Google LLC</p>
         </div>
     );
 }
 
-export default Sidebar
+export default Sidebar;
